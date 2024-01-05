@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background-color: black;
+}
+th{
+    padding: 10px 15px;
+}
+td{
+    padding: 7px 15px;
+    border: 1px solid #4f4f4f;
+}
