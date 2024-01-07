@@ -5,7 +5,18 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        montreal: [ "'PP Neue Montreal', sans-serif" ]
+      },
+      colors: {
+        sonicSilver: '#797979',
+        onyx: '#383838'
+      },
+      backgroundImage: {
+        'hero-image': "url('/src/assets/hero.webp')",
+      }
+    },
   },
   plugins: [],
 }
