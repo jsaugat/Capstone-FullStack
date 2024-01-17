@@ -1,7 +1,7 @@
 // import { useState } from "react";
 import "./Styles/App.scss";
 import "./Styles/animation.scss";
-import { NavBar, PointerBall } from "./master";
+import { Footer, NavBar, PointerBall } from "./master";
 import { Outlet } from "react-router-dom";
 
 function App() {
@@ -52,11 +52,13 @@ function App() {
         </defs>
       </svg>
       {/* Cursor ball */}
-      <PointerBall />
+      {/* <PointerBall /> */}
       {/* fixed Navigation */}
       <NavBar />
       {/* variable Body */}
       <Outlet />
+      {/* Footer */}
+      <Footer/>
     </main>
   );
 }

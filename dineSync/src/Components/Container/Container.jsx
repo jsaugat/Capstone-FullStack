@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Container({children}) {
+function Container({children, className}) {
   return (
-    <div className='mx-[10rem]'>
+    <div className={`mt-[95.7px] mx-[2rem] ${className}`}>
       {children}
     </div>
   )

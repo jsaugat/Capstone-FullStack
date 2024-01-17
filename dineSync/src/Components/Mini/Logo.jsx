@@ -32,7 +32,7 @@ function Logo() {
         </svg>
         {/* text */}
         <h2 className="text-6xl text-transparent bg-clip-text bg-gradient-to-r from-gray-300 via-white to-gray-300">
-          Fusion
+          Qitchen
         </h2>
       </div>
     </NavLink>
