@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 // components
 import WorkoutDetails from "../components/WorkoutDetails";
+import WorkoutForm from "../components/WorkoutForm";
 
 function Homepage() {
   const [workouts, setWorkouts] = useState(null);
@@ -29,10 +30,13 @@ function Homepage() {
 
   return (
     <div className="home">
-      {workouts && // initially its state is null so must use this line
-        workouts.map((workout) => (
-          <WorkoutDetails key={workout._id} workout={workout} />
-        ))}
+      <div className="workouts">
+        {workouts && // initially its state is null so must use this line
+          workouts.map((workout) => (
+            <WorkoutDetails key={workout._id} workout={workout} />
+          ))}
+      </div>
+      <WorkoutForm />
     </div>
   );
 }
