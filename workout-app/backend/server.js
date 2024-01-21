@@ -2,7 +2,7 @@ import dotenv from "dotenv";
 dotenv.config(); // access the .env file in an object called process.env
 import express from "express"; 
 import mongoose from "mongoose"; // db connector
-import workoutRoutes from "./routes/workouts.js"; // router
+import workoutRoutes from "./src/routes/workouts.js"; // router
 
 // express app
 const app = express();
