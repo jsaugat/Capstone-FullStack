@@ -5,7 +5,7 @@
 
 /* layout */
 :root {
-  --primary: #5836ff;
+  --primary: #000000;
   --error: #e7195a;
 }
 body {
@@ -19,7 +19,7 @@ header {
 header .container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 10px 20px;
+  padding: 2px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -86,9 +86,9 @@ form button {
   background: var(--primary);
   border: 0;
   color: #fff;
-  padding: 10px;
+  padding: 10px 13px;
   font-family: "Poppins";
-  border-radius: 4px;
+  border-radius: 40px;
   cursor: pointer;
 }
 div.error {

@@ -7,30 +7,33 @@ function WorkoutForm() {
   const [load, setLoad] = useState();
   const [error, setError] = useState();
 
-  //? we're gonna reach out to api, hence asynchronous
+  //? We're gonna reach out to api, hence asynchronous
   const handleSubmit = async(e) => {
     e.preventDefault();
-    const workout = {title, load, reps}
-
-    const response = await fetch("/api/workouts", {
+    const workout = {title, reps, load} // workout object, {title: title, ....}
+    const url = "/api/workouts"
+    const response = await 
+      fetch(url, 
+      {
         method: "POST",
-        body: JSON.stringify(workout),
         headers: {
-            "Content-type": "application/json"
-        }
-    })
-    //? reference "controllers/workout.controller.js" in backend folder
+          "Content-type": "application/json"
+        },
+        body: JSON.stringify(workout),
+      })
+
+    //? Reference --> "controllers/workout.controller.js" in backend folder
     // store json cuz its either success or failure status while createWorkout in the controller
     const json = await response.json();
     if(!response.ok){
-        setError(json.error) // res.status(400).json({ error: error.message }); in controller
+      setError(json.error) // res.status(400).json({ error: error.message }); in controller
     }
     if(response.ok){
-        setTitle("")
-        setLoad("")
-        setReps("")
-        setError(null)
-        console.log("new workout created", json)
+      setTitle("")
+      setLoad("")
+      setReps("")
+      setError(null)
+      console.log("new workout created", json)
     }
   }
   return (
@@ -38,13 +41,13 @@ function WorkoutForm() {
       <h3>Add a New Workout</h3>
 
       <label>Exercise Title</label>
-      <input type="text" placeholder="workout title" value={title} onChange={(e)=>setTitle(e.target.value)} />
+      <input type="text" placeholder="Workout Title" value={title} onChange={(e)=>setTitle(e.target.value)} />
 
       <label>Load (in kg)</label>
-      <input type="number" placeholder="load" value={load} onChange={(e)=>setLoad(e.target.value)} />
+      <input type="number" placeholder="How much load?" value={load} onChange={(e)=>setLoad(e.target.value)} />
 
       <label>Reps</label>
-      <input type="number" placeholder="reps" value={reps} onChange={(e)=>setReps(e.target.value)} />
+      <input type="number" placeholder="How many reps?" value={reps} onChange={(e)=>setReps(e.target.value)} />
 
       <button type="submit">Add Workout</button>
 

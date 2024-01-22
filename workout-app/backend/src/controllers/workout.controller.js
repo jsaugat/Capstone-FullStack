@@ -22,10 +22,10 @@ const getWorkout = async (req, res) => {
 
 //? CREATE a new workout
 const createWorkout = async (req, res) => {
-  const { title, reps, load } = req.body;
+  const { title, reps, load } = req.body; // destructuring properties from req.body object. 
   // create a new document in db
   try {
-      const createWorkout = await Workout.create({ title, reps, load });
+    const createWorkout = await Workout.create({ title, reps, load });
     res.status(200).json(createWorkout);
   } catch (error) {
     res.status(400).json({ error: error.message });

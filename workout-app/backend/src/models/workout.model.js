@@ -9,7 +9,7 @@ const workoutSchema = new mongoose.Schema(
     reps: { type: Number, required: true },
     load: { type: Number, required: true }
   },
-  { timestamps: true } // when we create a document, it automatically add a createdAt and updatedAt props for us
+  { timestamps: true } // when we create a document, it automatically add a createdAt and updatedAt properties for us
 );
 
 const Workout = mongoose.model("Workout", workoutSchema) // mongoose.model(name, schema)
