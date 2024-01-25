@@ -1,6 +1,8 @@
 import Workout from "../models/workout.model.js";
 import mongoose from "mongoose"
 
+//!ALL THE CONTROLLER FUNCTIONS TO HANDLE HTTP REQUESTS
+
 //? GET all workouts
 const getWorkouts = async (req, res) => {
   //* find all workouts, sort them by createdAt in descending order. 
@@ -22,13 +24,30 @@ const getWorkout = async (req, res) => {
 
 //? CREATE a new workout
 const createWorkout = async (req, res) => {
-  const { title, reps, load } = req.body; // destructuring properties from req.body object. 
+  
+  const { title, reps, load } = req.body; // destructuring properties from req.body object. this assumes that the request body contains an object with properties named title, reps, and load. For example, a client might send a POST request with JSON data like { "title": "Workout1", "reps": 10, "load": 50 }.
   // create a new document in db
+
+  // when user leaves some field empty in workoutForm
+  let emptyFields = []
+  let fields = [title, reps, load]
+  for(let field of fields){
+    if(!field){
+      emptyFields.push(field)
+    }
+  }
+  if(emptyFields.length > 0){
+    // return res.status(400).json({error: error.message)
+    return res.status(400).json({error: "Please fill-in all the fields", emptyFields})
+  }
+
   try {
-    const createWorkout = await Workout.create({ title, reps, load });
+    const createWorkout = await Workout.create({ title, reps, load }); //If the document creation is successful, the server 'responds with a status of 200 '
     res.status(200).json(createWorkout);
   } catch (error) {
     res.status(400).json({ error: error.message });
+    // this error is thrown by mongoose, 
+    // if mongoose tries to save a new doc where it doesn't correspond with schema. for example if it doesn't have load or reps properties, the error is shown
   }
 };
 

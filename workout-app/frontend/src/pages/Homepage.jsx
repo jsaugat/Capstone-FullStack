@@ -30,7 +30,7 @@ function Homepage() {
         .catch((error) => console.log("Error fetching data:", error.message));
     };
     fetchWorkouts();
-  }, [dispatch]);
+  }, [dispatch]); // 'dispatch' is an external function so must specify it in dependencies.
 
   return (
     <div className="home">
