@@ -12,14 +12,12 @@ import {
 // pages and components
 import App from "./App";
 import Homepage from "./pages/Homepage";
-import AboutPage from "./pages/AboutPage";
 // context
 import { WorkoutsContextProvider } from "./context/workoutContext";
 
 const routes = createRoutesFromElements(
   <Route path="/" element={<App />}>
     <Route path="" element={<Homepage />} />
-    <Route path="/about" element={<AboutPage />} />
   </Route>
 );
 const router = createBrowserRouter(routes);
