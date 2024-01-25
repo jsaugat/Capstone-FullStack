@@ -1,11 +1,13 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import axios from "axios";
 // components
 import WorkoutDetails from "../components/WorkoutDetails";
 import WorkoutForm from "../components/WorkoutForm";
+// hooks
+import { useWorkoutsContext } from "../hooks/useWorkoutsContext";
 
 function Homepage() {
-  const [workouts, setWorkouts] = useState(null);
+  const { workouts, dispatch } = useWorkoutsContext();
   useEffect(() => {
     const url = "/api/workouts";
     // ? fetch data using fetch(url)
@@ -22,11 +24,13 @@ function Homepage() {
     const fetchWorkouts = () => {
       axios
         .get(url)
-        .then((response) => setWorkouts(response.data)) //this logs actual data from the server response either they are JSON object or array.
+        .then((response) => { // 'response.data' returns actual data from the server-response either they are JSON object or array.
+          dispatch({type: "SET_WORKOUTS", payload: response.data})
+        }) 
         .catch((error) => console.log("Error fetching data:", error.message));
     };
     fetchWorkouts();
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className="home">
