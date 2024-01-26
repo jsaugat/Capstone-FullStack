@@ -1,8 +1,11 @@
 import express from "express";
-import { test1 } from "../controllers/controllers.js"
+import { getMenu, postMenuItem, deleteMenuItem } from "../controllers/controllers.js"
 
 const router = express.Router();
 
-router.get("/", test1)
+// get MENU
+router.get("/", getMenu)
+router.post("/", postMenuItem)
+router.delete("/:id", deleteMenuItem)
 
 export default router;

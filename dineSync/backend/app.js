@@ -11,7 +11,7 @@ const port = process.env.PORT || 6900;
 //? parse incoming requests with JSON payloads. and make it availble in request body (req.body)
 app.use(express.json());
 
-//? GLOBAL middleware
+// GLOBAL middleware
 app.use("/", (req, res, next) => {
   console.log(`- Request Method -> ${req.method}`);
   console.log(`- Request Path -> ${req.url}`);
@@ -19,7 +19,7 @@ app.use("/", (req, res, next) => {
   next();
 });
 
-//? ROUTES middleware
+// ROUTES middleware
 app.use("/app", router);
 
 //? Database connection

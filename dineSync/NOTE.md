@@ -8,7 +8,7 @@ password: jsaugat_
 
 1. **Client (React App):** 
  - Initiates an HTTP request (e.g., using fetch or Axios) to the backend API endpoint.
-2. ***Backend (Express):** 
+2. **Backend (Express):** 
 - Receives the HTTP request, processes it through the appropriate route and controller, interacts with the database (if needed), and sends back an HTTP response.
 3. **Client (React App):** 
 - Receives the HTTP response, processes the data, and updates the UI as necessary.
