@@ -10,7 +10,7 @@ const reducer = (state, action) => {
       return state;
   }
 };
-function BookingPage() {
+function ReservationPage() {
   const [availableTimes, dispatch] = useReducer(reducer, []);
 
   // Step 2: Create updateTimes and initializeTimes functions
@@ -30,4 +30,4 @@ function BookingPage() {
   );
 }
 
-export default BookingPage;
+export default ReservationPage;

@@ -9,7 +9,7 @@ function App() {
   return (
     <main className="relative">
       {/* Green blob */}
-      <svg
+      {/* <svg
         className="absolute z-[-1] -left-[35rem] -top-[3rem]"
         width="800"
         height="600"
@@ -50,7 +50,7 @@ function App() {
             />
           </filter>
         </defs>
-      </svg>
+      </svg> */}
       {/* Cursor ball */}
       {/* <PointerBall /> */}
       {/* fixed Navigation */}

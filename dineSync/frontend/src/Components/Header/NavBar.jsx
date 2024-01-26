@@ -11,13 +11,13 @@ const NavBar = () => {
       {/* menu */}
       <ul className="flex gap-12 items-center">
         <li ><NavLink to="/">Home</NavLink></li>
-        <li ><NavLink to="/menu">The Menu</NavLink></li>
         <li ><NavLink to="/about">About us</NavLink></li>
         <li ><NavLink to="/contact">Contact</NavLink></li>
+        <li ><NavLink to="/menu">The Menu</NavLink></li>
         {/* button */}
         <li className="book-btn">
           <NavLink to="/booking">
-            <CallToAction className="bg-transparent">Book a table</CallToAction>
+            <CallToAction className="bg-transparent">Reservation</CallToAction>
           </NavLink>
         </li>
       </ul>

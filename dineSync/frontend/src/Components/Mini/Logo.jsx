@@ -31,8 +31,8 @@ function Logo() {
           />
         </svg>
         {/* text */}
-        <h2 className="text-6xl text-transparent bg-clip-text bg-gradient-to-r from-gray-300 via-white to-gray-300">
-          Qitchen
+        <h2 className="text-5xl text-transparent bg-clip-text bg-gradient-to-r to-gray-400 from-white ">
+          DineSync
         </h2>
       </div>
     </NavLink>

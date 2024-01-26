@@ -11,7 +11,8 @@ export default {
       },
       colors: {
         sonicSilver: '#797979',
-        onyx: '#383838'
+        onyx: '#383838',
+        darkGray: "#1F1F1F"
       },
       backgroundImage: {
         'hero-image': "url('/src/assets/hero.webp')",

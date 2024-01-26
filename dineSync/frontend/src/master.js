@@ -9,7 +9,7 @@ import Container from "./Components/Container/Container";
 // pages
 import HomePage from "./Pages/HomePage";
 import AboutPage from "./Pages/AboutPage";
-import BookingPage from "./Pages/BookingPage";
+import ReservationPage from "./Pages/ReservationPage";
 import MenuPage from "./Pages/MenuPage";
 import ContactPage from "./Pages/ContactPage";
 // components
@@ -24,7 +24,7 @@ export {
   Container,
   HomePage,
   AboutPage,
-  BookingPage,
+  ReservationPage,
   MenuPage,
   ContactPage,
   Logo,

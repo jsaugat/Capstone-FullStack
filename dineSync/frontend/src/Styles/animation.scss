@@ -75,3 +75,26 @@
   transform: scale(2);
 }
 
+//? underline animation
+.linimate {
+  position: relative;
+  display: inline-block;
+
+  &:not(.book-btn)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 1.5px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 30px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.2s ease-in-out;
+  }
+  &:not(.book-btn):hover::after {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+}
